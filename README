@@ -1,0 +1,67 @@
+
+1) All the files required are under the folder Association in the submission
+
+2) The source code is a file named Apriori.py (Python version 2.7) and it can be run using the command 
+
+	python Apriori.py
+
+3) Once you enter the command, you'll get a prompt on the terminal saying
+
+				Enter support:
+				Enter confidence:
+
+   Enter the desired value for support and confidence in decimal form (support of 50% must be given as 0.5)
+
+4) You will get output on the terminal with the number of length k frequent itemsets generated and the total number of frequent itemsets generated.
+
+5) Once the frequent itemsets are generated based on the support count, The code tries to generate association rules based on the query given.
+
+6) You will get a prompt on the terminal saying
+
+				Enter template type:
+
+   (Enter 1,2 OR 3 based on the template type of the query)
+
+7) If query is of template type 1,
+
+	For example, asso_rule.template1("RULE", "ANY", ['G59_Up','G1_Down'])
+	# We want all rules containing G59_Up and G1_Down
+
+	On the prompt in the terminal, enter the input in the following format
+
+				Enter query: RULE/ANY/G59_Up,G1_Down
+
+	# input_format = part(RULE/BODY/HEAD)/condition(ANY/NONE/1)/list_of_attributes_comma_sepearated
+
+8) If query is of template type 2,
+	
+	For example, asso_rule.template2("RULE", 3)
+	# We want all rules where the rule is of length 3
+
+	On the prompt in the terminal, enter the input in the following format
+
+				Enter query: RULE/==/3
+
+	# input_format = part(RULE/BODY/HEAD)/operation(==/>=/<=)/specify_length
+
+9) If query is of template type 3,
+	
+	For example, asso_rule.template3("1or1", "BODY", "ANY", ['G10_Down'], "HEAD", 1, ['G59_Up'])
+	# We want all rules that satisfy either of the conditions, Body has G10_Down or Head has G59_Up (query of template type 1 or another query of template type 1)
+
+	On the prompt in the terminal, enter the input in the following format
+
+				Type query type: 1/OR/1
+
+	# input_format = template_type_of_first_query(1/2)/Operation(AND/OR)/template_type_of_second_query(1/2)
+
+	Once you enter the query type, enter the 1st query in the following format
+
+				Enter query: BODY/ANY/G10_Down
+
+	Once you enter the first query, enter the second query in the following format
+
+				Enter query: HEAD/1/G59_Up
+
+10) Once the query is given as input, the program prints out the generated rules on the console along with the Total number of rules generated
+
